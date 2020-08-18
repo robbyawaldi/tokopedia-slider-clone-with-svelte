@@ -10,7 +10,8 @@
 	@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;700&display=swap');
 
 	main {
-		height: 100vh;
+		max-width: 1190px;
+		margin: 20px auto;
 		display: flex;
 		overflow: hidden;
 		font-family: 'Baloo Tamma 2', cursive;
