@@ -70,6 +70,22 @@
   }
 </script>
 
+<div class="wrapper {motion}">
+  {#each items as item}
+    <img
+      src={item}
+      alt=""
+      style="transform: translateX({translateX}%) {index == items.indexOf(item) ? 'scale(1)' : 'scale(0.9)'}"
+    />
+  {/each}
+  <div class="controls prev" on:click={prev}>
+    <button type="button" class="icons icon-prev">prev</button>
+  </div>
+  <div class="controls next" on:click={next}>
+    <button type="button" class="icons icon-next">next</button>
+  </div>
+</div>
+
 <style type="text/scss">
   .wrapper {
     box-sizing: border-box;
@@ -148,28 +164,13 @@
     }
 
     &:hover .controls:nth-child(odd) button {
-        left: 8px;
-        right: auto;
+      left: 8px;
+      right: auto;
     }
 
     &:hover .controls:nth-child(even) button {
-        left: auto;
-        right: 8px;
+      left: auto;
+      right: 8px;
     }
   }
 </style>
-
-<div class="wrapper {motion}">
-  {#each items as item}
-    <img
-      src={item}
-      alt=""
-      style="transform: translateX({translateX}%) {index == items.indexOf(item) ? 'scale(1)' : 'scale(0.9)'}" />
-  {/each}
-  <div class="controls prev" on:click={prev}>
-    <button type="button" class="icons icon-prev">prev</button>
-  </div>
-  <div class="controls next" on:click={next}>
-    <button type="button" class="icons icon-next">next</button>
-  </div>
-</div>
